@@ -33,24 +33,24 @@ char postfixExp[MAX_EXPRESSION_SIZE];	//후위표기법
 char postfixStack[MAX_STACK_SIZE];		//후위표기로 전환시 연산자를 보관해 둘 스택
 int evalStack[MAX_STACK_SIZE];			//계산 스택
 int postfixStackTop = -1;				//후위표기 연산자 스택의 top
-int evalStackTop = -1;					//
-int evalResult = 0;
+int evalStackTop = -1;					//연산시 결과 값 저장 스택의 top
+int evalResult = 0;						//연산결과 
 
 //함수
 void postfixPush(char x);           //postfixStack에 push
 char postfixPop();                  //postfixStack에 pop
-void evalPush(int x);               //
-int evalPop();                      //
+void evalPush(int x);               //evalStack에 push
+int evalPop();                      //evalStack에 pop
 void getInfix();                    //중위표기법으로 수식 입력받는 함수
 
 precedence getToken(char symbol);   //문자를 받아서
 precedence getPriority(char x);     //연산우선순위 결정
 
-void charCat(char* c);              //
-void toPostfix();                   //
-void debug();                       //
-void reset();                       //
-void evaluation();                  //
+void charCat(char* c);              //postfixExp에 붙여줌
+void toPostfix();                   //후위표기법으로 변경
+void debug();                       //실행후의 결과 출력
+void reset();                       //모든 변수 및 스택 초기화
+void evaluation();                  //후위표기 수식 연산함수
 
 int main()
 {
