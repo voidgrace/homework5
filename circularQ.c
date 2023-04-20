@@ -8,7 +8,6 @@
 #include <stdlib.h>
 
 #define MAX_QUEUE_SIZE 4
-
 typedef char element;				//원소
 typedef struct {					//큐 구조체
 	element queue[MAX_QUEUE_SIZE];		//큐
@@ -130,14 +129,14 @@ void enQueue(QueueType* cQ, element item)//인큐
 	
 	cQ->rear++;											//rear한칸 뒤로
 	cQ->queue[(cQ->rear) % MAX_QUEUE_SIZE]=item;		//rear의 위치에 인큐
-	return 0;
+	return;
 }
 
 void deQueue(QueueType* cQ, element* item)//디큐
 {
 	cQ->front++;										//front한칸 뒤로
 	cQ->queue[(cQ->front) % MAX_QUEUE_SIZE] = 0;		//front의 위치 디큐
-	return 0;
+	return;
 }
 
 
